@@ -1,3 +1,6 @@
+
+
+// tslint:disable-next-line:interface-name
 export interface SpotifyToken {
     access: string;
 	refresh: string
@@ -14,29 +17,39 @@ export const spotifyAuth = (): Promise<SpotifyToken> => new Promise<SpotifyToken
 				if("spotify" in json){
 					const tokens: any = json.spotify;
 					if("access" in tokens && "refresh" in tokens){
-						if(loginPopup) loginPopup.close();
+						if(loginPopup){
+							loginPopup.close();
+						}
 						resolve({
 							access: tokens.access,
 							refresh: tokens.refresh
 						});
 					}
 					else{
-						if(loginPopup) loginPopup.close();
+						if(loginPopup){
+							loginPopup.close();
+						}
 						reject(new Error("Failed to retrieve spotify access token"));
 					}
 				}
 				else{
-					if(loginPopup) loginPopup.close();
+					if(loginPopup){
+						loginPopup.close();
+					}
 					reject(new Error("Failed to retrieve spotify access token"));
 				}
 			}
 			else{
-				if(loginPopup) loginPopup.close();
+				if(loginPopup){
+					loginPopup.close();
+				}
 				reject(new Error("Invalid post message"));
 			}
 		}
 		catch(err){
-			if(loginPopup) loginPopup.close();
+			if(loginPopup){
+				loginPopup.close();
+			}
 			reject(err);
 		}
 	}, false);

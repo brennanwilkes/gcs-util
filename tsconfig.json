@@ -6,6 +6,12 @@
         "outDir": "./lib",
         "strict": true
     },
+    "rules": {
+        "interface-name": [
+            true,
+            "never-prefix"
+        ]
+    },
     "include": [
         "src"
     ],
