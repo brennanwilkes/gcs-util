@@ -1,1 +1,1 @@
-export const baseUrl = "http://localhost:8080";
+export const baseUrl = "https://gcs-core-pukl4kbeka-uw.a.run.app";
