@@ -6,7 +6,7 @@ export interface SpotifyToken {
   refresh: string;
 }
 
-const localStorageKey = "gcs-access-key-spotify";
+export const localStorageKey = "gcs-access-key-spotify";
 
 export const spotifyAuth = (): Promise<SpotifyToken> =>
   new Promise<SpotifyToken>((resolve, reject) => {
