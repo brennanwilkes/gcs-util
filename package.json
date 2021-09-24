@@ -1,6 +1,6 @@
 {
     "name": "gcs-util",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "description": "Utilities for gcs-core and gcs ecosystem applications",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",

@@ -78,6 +78,7 @@ export const spotifyCachedAuth = (): Promise<SpotifyToken> => new Promise<Spotif
 		localStorage.setItem(localStorageKey, JSON.stringify({
 			token,
 			expires: new Date(new Date().getTime() + 45 * 60000)
-		}))
+		}));
+		resolve(token);
 	}).catch(reject);
 });
