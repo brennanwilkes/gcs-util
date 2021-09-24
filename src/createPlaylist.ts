@@ -25,6 +25,7 @@ export function createPlaylist(options: CreatePlaylistOptions): Promise<CreatePl
 	return new Promise<CreatePlaylistResponse>((resolve, reject) => {
 		axios.post(
 			`${baseUrl}/api/v1/create?name=${options.name}${options.description ? `&description=${options.description}` : ""}${options.tracks.reduce((t,s) => `${t}&tracks[]=${s}`,'')}`,
+			{},
 			config
 		).then((resp) => {
 			resolve({
