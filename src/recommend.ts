@@ -51,7 +51,6 @@ export function recommend(options: RecommendOptions): Promise<RecommendResponse>
 		let url = `${baseUrl}/api/v1/recommend?limit=${options.limit}${options.seed_tracks.reduce((t,s) => `${t}&seed_tracks[]=${s}`,'')}`;
 		if(options.acousticness) url += `&acousticness=${options.acousticness}`;
 		if(options.danceability) url += `&danceability=${options.danceability}`;
-		if(options.acousticness) url += `&acousticness=${options.acousticness}`;
 		if(options.energy) url += `&energy=${options.energy}`;
 		if(options.key) url += `&key=${options.key}`;
 		if(options.mode) url += `&mode=${options.mode}`;
